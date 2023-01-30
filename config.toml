@@ -2,19 +2,19 @@
 
 [info]
 # The advertised URL for the Nostr websocket.
-relay_url = "wss://nostr.example.com/"
+relay_url = "wss://relay.nostr.africa/"
 
 # Relay information for clients.  Put your unique server name here.
-name = "nostr-rs-relay"
+name = "relay-nostr-africa"
 
 # Description
-description = "A newly created nostr-rs-relay.\n\nCustomize this with your own info."
+description = "A nostr relay running in Johannesburg, South Africa"
 
 # Administrative contact pubkey
-#pubkey = "0c2d168a4ae8ca58c9f1ab237b5df682599c6c7ab74307ea8b05684b60405d41"
+pubkey = "4186f9f1627c79e1a01c4700a85955988885b00f3f69befc9cae432e9ae2ee4e"
 
 # Administrative contact URI
-#contact = "mailto:contact@example.com"
+contact = "dunxen@nostr.africa"
 
 # Favicon location.  Relative to the current directory.  Assumes an
 # ICO format.
@@ -30,7 +30,7 @@ description = "A newly created nostr-rs-relay.\n\nCustomize this with your own i
 [database]
 # Database engine (sqlite/postgres).  Defaults to sqlite.
 # Support for postgres is currently experimental.
-#engine = "sqlite"
+engine = "postgres"
 
 # Directory for SQLite files.  Defaults to the current directory.  Can
 # also be specified (and overriden) with the "--db dirname" command
@@ -53,7 +53,8 @@ description = "A newly created nostr-rs-relay.\n\nCustomize this with your own i
 
 # Database connection string.  Required for postgres; not used for
 # sqlite.
-#connection = "postgresql://postgres:nostr@localhost:7500/nostr"
+# NOTE: Not sensitive as can only be reached internally by container
+connection = "postgres://postgres:qH85dGNdvNiThP9@relay-nostr-africa-db.internal:5432"
 
 # Optional database connection string for writing.  Use this for
 # postgres clusters where you want to separate reads and writes to
@@ -167,7 +168,7 @@ reject_future_seconds = 1800
 # NIP-05 verification of users.  Can be "enabled" to require NIP-05
 # metadata for event authors, "passive" to perform validation but
 # never block publishing, or "disabled" to do nothing.
-#mode = "disabled"
+mode = "passive"
 
 # Domain names that will be prevented from publishing events.
 #domain_blacklist = ["wellorder.net"]
