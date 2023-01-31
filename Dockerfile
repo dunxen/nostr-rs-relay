@@ -7,6 +7,7 @@ RUN USER=root cargo new --bin nostr-rs-relay
 WORKDIR ./nostr-rs-relay
 COPY ./Cargo.toml ./Cargo.toml
 COPY ./Cargo.lock ./Cargo.lock
+COPY ./config.toml ./config.toml
 # build dependencies only (caching)
 RUN cargo auditable build --release --locked
 # get rid of starter project code
