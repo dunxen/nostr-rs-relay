@@ -11,8 +11,8 @@ processes = []
   auto_rollback = true
 
 [mounts]
-source = "data"
-destination = "/usr/src/app"
+  source = "data"
+  destination = "/usr/src/app/db"
 
 [[services]]
   http_checks = []
