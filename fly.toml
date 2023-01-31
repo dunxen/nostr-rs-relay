@@ -10,6 +10,10 @@ processes = []
 [experimental]
   auto_rollback = true
 
+[mounts]
+source = "data"
+destination = "/usr/src/app"
+
 [[services]]
   http_checks = []
   internal_port = 8080

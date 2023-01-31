@@ -30,7 +30,7 @@ contact = "dunxen@nostr.africa"
 [database]
 # Database engine (sqlite/postgres).  Defaults to sqlite.
 # Support for postgres is currently experimental.
-engine = "postgres"
+#engine = "postgres"
 
 # Directory for SQLite files.  Defaults to the current directory.  Can
 # also be specified (and overriden) with the "--db dirname" command
@@ -54,7 +54,7 @@ engine = "postgres"
 # Database connection string.  Required for postgres; not used for
 # sqlite.
 # NOTE: Not sensitive as can only be reached internally by container
-connection = "postgres://postgres:qH85dGNdvNiThP9@relay-nostr-africa-db.internal:5432"
+#connection = "postgres://postgres:qH85dGNdvNiThP9@relay-nostr-africa-db.internal:5432"
 
 # Optional database connection string for writing.  Use this for
 # postgres clusters where you want to separate reads and writes to
