@@ -168,7 +168,7 @@ reject_future_seconds = 1800
 # NIP-05 verification of users.  Can be "enabled" to require NIP-05
 # metadata for event authors, "passive" to perform validation but
 # never block publishing, or "disabled" to do nothing.
-mode = "passive"
+mode = "enabled"
 
 # Domain names that will be prevented from publishing events.
 #domain_blacklist = ["wellorder.net"]
