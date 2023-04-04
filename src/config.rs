@@ -1,5 +1,5 @@
 //! Configuration file and settings management
-use config::{Config, ConfigError, File};
+use config::{Config, ConfigError, File, Environment};
 use serde::{Deserialize, Serialize};
 use std::time::Duration;
 use tracing::warn;
@@ -222,6 +222,7 @@ impl Settings {
             .add_source(Config::try_from(default)?)
             // override with file contents
             .add_source(File::with_name(config))
+            .add_source(Environment::default())
             .build()?;
         let mut settings: Settings = config.try_deserialize()?;
         // ensure connection pool size is logical
