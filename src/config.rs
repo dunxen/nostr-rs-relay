@@ -222,7 +222,8 @@ impl Settings {
             .add_source(Config::try_from(default)?)
             // override with file contents
             .add_source(File::with_name(config))
-            .add_source(Environment::default())
+            // override with environment variables
+            .add_source(Environment::with_prefix("RELAY").separator("__"))
             .build()?;
         let mut settings: Settings = config.try_deserialize()?;
         // ensure connection pool size is logical

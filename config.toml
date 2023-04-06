@@ -192,7 +192,7 @@ mode = "enabled"
 
 [pay_to_relay]
 # Enable pay to relay
-enabled = false
+enabled = true
 
 # The cost to be admitted to relay
 admission_cost = 4200
